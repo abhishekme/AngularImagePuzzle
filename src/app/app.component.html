@@ -1,20 +1,22 @@
+
+
 <div class="board-section">
 <h1>Image Puzzle</h1>
-
+<div id="row">
+  <div class="column slider">
+      <label>Easy</label>
+      <input type="range" min="3" max="5" value="4" #scale 
+      (input)="scaleChange(scale.value)">
+      <label>Hard</label>
+  </div>
+  <div class="column reset" (click)="resetTiles()">> Reset</div>
+  </div>
 <div class="upload-image">
     <label>Custom Image</label>
     <input type="file" name="upimg" id="upimg" (change)="upload_image($event);">
 </div>
 <div class="hint-guide" [innerHTML]="hintText" [ngClass]="hintStyle"></div>
-
-<div class="slider-control">
-  <form>
-      <label>Easy</label>
-      <input type="range" min="3" max="5" value="4" #scale 
-      (input)="scaleChange(scale.value)">
-      <label>Hard</label>
-  </form>
-</div>
+<!-- Slider/Reset -->
 <div style="margin: 5px 15px;">
 <canvas id="puzzle"  style="border: 1px solid #000000;padding: 5px 5px;" width="450px" height="450px" (mousedown)="changeposition($event)"></canvas>
 </div>

@@ -1,0 +1,88 @@
+#puzzle{
+    box-shadow: 0 0 5px 5px #5aa0f9 !important;
+    background: #5aa0f9;
+    border-radius: 15% !important;
+    z-index: 10;
+    background-color: lightgray !important;
+    display: block;
+    margin: 25px 15px;
+    clear: both;
+}
+
+.hint-guide{
+    box-shadow: 0 0 4px 4px #5aa0f9 !important;
+    border-radius: 5% !important;
+    z-index: 10;
+    padding: 0 0 0 15px;
+    margin: 0 0 10px 15px;    
+    color:black !important;
+    font-weight: 400;
+    background-color: white!important;
+    clear: both;
+}
+.hint-error{
+    box-shadow: 0 0 4px 4px red !important;
+}
+.hint-succ{
+    box-shadow: 0 0 4px 4px green !important;
+    color: red;
+}
+.board-section{ 
+    margin: 0 auto;
+    width: 600px;
+}
+.board-section h1{
+    padding: 0 0 0 100px;
+}
+.upload-image{
+    display: block;
+    margin: 15px 5px;
+    clear: both;
+}
+.upload-image label{
+    padding-right: 5px;
+}
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 15%;
+    padding: 10px;
+
+}
+.column.slider{
+    background: #fff;
+    
+    label{
+        padding-right: 5px;
+    }
+}
+.column.reset{
+    box-shadow: 0 0 4px 4px orangered; 
+    border-radius: 5% !important;
+    float: right;
+    background: aquamarine;
+    cursor: pointer;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+    .slider-control{
+        float: left;
+        background: #fff;
+    }
+    .reset-tiles{
+    box-shadow: 0 0 4px 4px orangered;
+    border-radius: 5% !important;
+    width: 60px;
+    /* padding: 0; */
+    /* display: block; */
+    text-align: right;
+    margin-left: 377px;
+    background: aquamarine;
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@ import { Component, Input, ElementRef, AfterViewInit, ViewChild
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 
 //@ViewChild('myCanvas') myCanvas: ElementRef;
@@ -57,10 +57,14 @@ export class AppComponent implements AfterViewInit {
 
     this.boardParts = new Array(this.tileCount);
     this.source = new Image();
-    this.hintText   = 'Upload image width/height should be minimum 450px.';
+    this.hintText   = 'Upload image width/height should be 450px.';
     this.hintStyle  = 'hint-guide';
     //this.tileSize   = this.boardSize / this.tileCount;
     //console.log("Canvas Width/Height: ",this.puzzle.nativeElement.width);
+  }
+
+  resetTiles(){
+    this.scaleChange(3);
   }
 
   slideTile(toLoc : any, fromLoc : any) {
@@ -119,19 +123,16 @@ export class AppComponent implements AfterViewInit {
       var width   = img.width;
       var height  = img.height;
 
-      console.log("NEW IMAGE width", width);
-      console.log("NEW IMAGE height: ", height);
       if(width != height || (width != 450 || height != 450)){
-        this.hintText  = 'Image size Not identical, Width:450px and Height:450px';
+        this.hintText  = 'Image size Not identical, should be Width:450px and Height:450px';
         this.hintStyle = 'hint-error';
         this.source.src = this.image;
         return false;
       }
     }
-    this.hintText   = 'Upload image width/height should be minimum 450px.';
+    this.hintText   = 'Upload image width/height should be 450px.';
     this.hintStyle  = 'hint-guide';
     this.source.src =  imageBlob;
-    console.log("Current Width: ", this.source.width);  
   }
 
   clickMe() : void{
