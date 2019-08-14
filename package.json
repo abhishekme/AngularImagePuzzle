@@ -1,9 +1,9 @@
 {
   "name": "angular-puzzle",
   "version": "0.0.0",
-  "main" : "main.js",
+  "main" : "puzzle.prod.js",
   "scripts": {
-    "electron": "ng build && electron .",
+   "electron": "ng build && electron .",
    "electron-aot": "ng build — prod && electron .", 
     "ng": "ng",
     "start": "ng serve",
