@@ -1,3 +1,4 @@
+//const { resolve } from 'app-root-path';
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
@@ -19,11 +20,27 @@ const createWindow = () => {
 
         // and load the app.
         //http://192.168.0.15:8080/
-        win.loadURL(url.format({
+        /*win.loadURL(url.format({
             pathname: '192.168.0.15:8080',
             protocol: 'http:',
             slashes: true
-        }));
+        }));*/
+        //win.loadFile('./dist/electro-angular7/index.html');
+        // load the dist folder from Angular
+        /*win.loadURL(
+            url.format({
+            pathname: path.join(__dirname, `/dist/index.html`),
+            protocol: "file:",
+            slashes: true
+            })
+        );*/
+        //win.loadURL(`file://${__dirname}/dist/index.html`);
+        window.loadURL(url.format({
+            pathname: path.join(__dirname, 'dist/index.html'), // important
+            protocol: 'file:',
+            slashes: true,
+            // baseUrl: 'dist'
+          }));
 
         win.webContents.openDevTools();
 

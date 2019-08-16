@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('trodon') trodon: ElementRef;
   @ViewChild('puzzle') puzzle: ElementRef<HTMLCanvasElement>;
 
-  image = './assets/img/rsz_royal-bengal-tiger-3.jpg';//'./assets/img/Royal-Bengal-Tiger-1.jpg';
+  image = './assets/img/rsz_royal-bengal-tiger-3.jpg';
   boardSize : number = 450;
 
   //public context: CanvasRenderingContext2D;  
@@ -130,7 +130,7 @@ export class AppComponent implements AfterViewInit {
         return false;
       }
     }
-    this.hintText   = 'Upload image width/height should be 450px.';
+    this.hintText   = 'Upload image size Width:450px and Height:450px';
     this.hintStyle  = 'hint-guide';
     this.source.src =  imageBlob;
   }
@@ -158,7 +158,7 @@ export class AppComponent implements AfterViewInit {
     this.drawBoardImage();
   }
 
-  private drawBoardImage(){
+  public drawBoardImage(){
 
     this.canvas = document.getElementById('puzzle');;
     this.contextCanv = this.canvas.getContext('2d');
@@ -172,7 +172,7 @@ export class AppComponent implements AfterViewInit {
     this.source.src = this.image;
   }
 
-  private drawTiles(){
+  public drawTiles(){
     //console.log(this.source.src);
     this.contextCanv.clearRect ( 0 , 0 , this.boardSize , this.boardSize );
     for (var i = 0; i < this.tileCount; ++i) {
@@ -191,7 +191,7 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  private scaleChange(getVal : number){
+  public scaleChange(getVal : number){
     if(getVal){
       this.hintText   = 'Upload image width/height should be minimum 450px.';
       this.hintStyle  = 'hint-guide';
@@ -202,7 +202,7 @@ export class AppComponent implements AfterViewInit {
     this.drawTiles();
   }
 
-  private setBoard(){
+  public setBoard(){
     this.boardParts = new Array(this.tileCount);
     for (var i = 0; i < this.tileCount; ++i) {
       this.boardParts[i] = new Array(this.tileCount);
